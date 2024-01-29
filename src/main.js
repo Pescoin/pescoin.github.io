@@ -12,3 +12,13 @@ document.addEventListener('scroll', () => {
     header.classList.remove('header--dark');
   }
 });
+
+// Home 섹션을 아래로 스크롤시 투명하게 처리함
+const home = document.querySelector('.home__container');
+const homeHeight = home.offsetHeight;
+console.log(homeHeight);
+
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+  console.log(1 - window.scrollY / homeHeight);
+});
