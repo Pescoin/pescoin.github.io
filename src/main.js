@@ -30,3 +30,30 @@ document.addEventListener('scroll', () => {
     arrowUp.style.opacity = 0;
   }
 });
+
+// 모바일 버전: 창의 크기가 모바일 크기가 되면 메뉴 사라지고 메뉴바가 나타남
+
+// const headerMenu = document.querySelector('.header__menu');
+// window.addEventListener('resize', () => {
+//   if (window.innerWidth > 768) {
+//     headerMenu.style.opacity = 0;
+//   } else {
+//     headerMenu.style.opacity = 1;
+//   }
+
+//   headerMenu.innerHTML = '';
+// });
+
+// Navbar 토글버튼 클릭 처리
+const navbarMenu = document.querySelector('.header__menu');
+const navbarToggle = document.querySelector('.header__toggle');
+
+navbarToggle.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+});
+
+//Navbar 메뉴 클릭시 메뉴를 자동으로 닫아줌
+
+navbarMenu.addEventListener('click', () => {
+  navbarMenu.classList.remove('open');
+});
